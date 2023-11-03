@@ -2,8 +2,8 @@
 
 [https://proxy-list.deno.dev](https://proxy-list.deno.dev/)
 
-```tsx
-{
+```ts
+type resp = {
   "host": string,
   "port": number
 }[]
