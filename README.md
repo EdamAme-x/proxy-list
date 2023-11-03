@@ -1,11 +1,10 @@
-# Hono Deno REST API Template
+# Proxy List
 
-A template of REST API app using [Hono](https://hono.dev/) framework
+[https://proxy-list.deno.dev](https://proxy-list.deno.dev/)
 
 ```
-deno run --allow-net main.ts
+{
+  "host": string,
+  "port": number
+}[]
 ```
-
-This starts the server at http://localhost:8000/
-
-Try go to http://localhost:8000/api/Brachiosaurus or http://localhost:8000/api/
