@@ -7,9 +7,16 @@ type Proxy = {
   port: number;
 };
 
-type HTMLCollectionOf<T extends Node> = T[];
+const app: Hono = new Hono();
 
-const app = new Hono();
+function shuffle(array: Proxy[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+}
 
 app.get("*", async (c) => {
   const resp = await fetch("https://free-proxy-list.net/");
@@ -30,7 +37,7 @@ app.get("*", async (c) => {
     }
   }
  
-  return c.jsonT(proxys);
+  return c.json(shuffle(proxys));
 });
 
 Deno.serve(app.fetch);
