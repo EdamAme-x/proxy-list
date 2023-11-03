@@ -33,6 +33,9 @@ app.get("*", async (c) => {
     if (tds) {
       const host: string = tds[0].textContent;
       const port: number = parseInt(tds[1].textContent);
+      if (host.startsWith("127.")) {
+        continue;
+      }
       proxys.push({ host, port });
     }
   }
