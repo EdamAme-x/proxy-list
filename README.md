@@ -4,7 +4,7 @@
 
 ```ts
 type resp = {
-  "host": string,
+  "host": `${string}.${string}.${string}.${string}`,
   "port": number
 }[]
 ```
